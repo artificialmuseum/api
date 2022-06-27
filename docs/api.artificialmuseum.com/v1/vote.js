@@ -9,7 +9,7 @@ import { fs } from '@grundstein/commons'
 // const host = '192.168.50.173'
 // const port = 6000
 
-const dbFile = path.join('/home/grundstein/db.txt')
+const dbFile = '/home/grundstein/db.txt'
 
 export default async (req) => {
   if (!req.url.includes('?')) {

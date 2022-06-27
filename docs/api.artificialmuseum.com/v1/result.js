@@ -1,7 +1,7 @@
 import path from 'path'
 import { fs } from '@grundstein/commons'
 
-const dbFile = path.join(process.cwd(), 'db.txt')
+const dbFile = '/home/grundstein/db.txt'
 
 export default async (req) => {
   const chars = await fs.readFile(dbFile, 'utf8')
