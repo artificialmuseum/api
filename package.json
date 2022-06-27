@@ -23,6 +23,7 @@
     "@magic/format": "0.0.43"
   },
   "dependencies": {
+    "@grundstein/commons": "^0.0.10",
     "@grundstein/gas": "0.0.2"
   },
   "contributors": [
