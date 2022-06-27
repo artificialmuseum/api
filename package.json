@@ -1,0 +1,38 @@
+{
+  "name": "api.artificialmuseum.com",
+  "version": "0.0.1",
+  "description": "api routes for the artificialmuseum.com",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "node node_modules/@grundstein/gas/src/bin.mjs --dir ./docs --host localhost --port 8005",
+    "format": "f -w -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artificialmuseum/api.git"
+  },
+  "keywords": [],
+  "author": "TheSystemCollective",
+  "bugs": {
+    "url": "https://github.com/artificialmuseum/api/issues"
+  },
+  "homepage": "https://github.com/artificialmuseum/api#readme",
+  "devDependencies": {
+    "@magic/format": "0.0.43"
+  },
+  "dependencies": {
+    "@grundstein/gas": "0.0.2"
+  },
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    },
+    {
+      "name": "daniela weiss",
+      "github": "mslitto"
+    }
+  ]
+}
