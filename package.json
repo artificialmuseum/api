@@ -24,7 +24,7 @@
     "@magic/format": "0.0.43"
   },
   "dependencies": {
-    "@grundstein/commons": "github:grundstein/commons"
+    "@grundstein/commons": "github:grundstein/commons#http2"
   },
   "contributors": [
     {
