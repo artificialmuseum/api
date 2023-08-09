@@ -1,8 +1,12 @@
-import path from 'path'
+// import path from 'path'
 // import dgram from 'node:dgram'
 
 // import osc from 'osc-min'
-import { fs } from '@grundstein/commons'
+import { constants, fs } from '@grundstein/commons'
+
+const {
+  HTTP2_HEADER_PATH,
+} = constants
 
 // const udp = dgram.createSocket('udp4')
 
@@ -11,15 +15,17 @@ import { fs } from '@grundstein/commons'
 
 const dbFile = '/home/grundstein/db.txt'
 
-export default async (req) => {
-  if (!req.url.includes('?')) {
+export default async ({ headers }) => {
+  const url = headers[HTTP2_HEADER_PATH]
+
+  if (!url.includes('?')) {
     return {
       code: 400,
       body: 'request url needs to include a question mark.',
     }
   }
 
-  const [_p, vote] = req.url.split('?')
+  const [_p, vote] = url.split('?')
 
   if (vote !== '0' && vote !== '1') {
     return {

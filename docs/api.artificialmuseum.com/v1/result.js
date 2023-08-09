@@ -1,9 +1,10 @@
-import path from 'path'
-import { fs } from '@grundstein/commons'
+import { constants, fs } from '@grundstein/commons'
+
+const { HTTP2_HEADER_PATH } = constants
 
 const dbFile = '/home/grundstein/db.txt'
 
-export default async (req) => {
+export default async ({ headers }) => {
   const chars = await fs.readFile(dbFile, 'utf8')
 
   const charArray = chars.split('')
@@ -21,8 +22,8 @@ export default async (req) => {
   const rPercent = ((results / charArray.length) * 100).toFixed(1) / 1
   const gPercent = (100 - rPercent).toFixed(1) / 1
 
-
-  if (req.url.includes('?') && req.url.endsWith('verbose=1')) {
+  const url = headers[HTTP2_HEADER_PATH]
+  if (url.includes('?') && url.endsWith('verbose=1')) {
     return {
       code: 200,
       body: `{"g":"${gVotes}","r":"${rVotes}","gp":"${gPercent}","rp":"${rPercent}","t": "${charArray.length}"}`,
