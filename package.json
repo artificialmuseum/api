@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/artificialmuseum/api#readme",
   "devDependencies": {
+    "@grundstein/gas": "0.0.2",
     "@magic/format": "0.0.43"
   },
   "dependencies": {
-    "@grundstein/commons": "^0.0.10",
-    "@grundstein/gas": "0.0.2"
+    "@grundstein/commons": "github:grundstein/commons"
   },
   "contributors": [
     {
