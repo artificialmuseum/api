@@ -5,8 +5,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "npm run dev",
-    "dev": "node node_modules/@grundstein/gas/src/bin.mjs --dir ./docs --host localhost --port 8005",
+    "start": "NODE_ENV=production npm run dev",
+    "dev": "node node_modules/@grundstein/gas/src/bin.js --dir ./docs --host localhost --port 8005",
     "format": "f -w -e js"
   },
   "repository": {
@@ -20,10 +20,11 @@
   },
   "homepage": "https://github.com/artificialmuseum/api#readme",
   "devDependencies": {
-    "@grundstein/gas": "0.0.2",
-    "@magic/format": "0.0.52"
+    "@grundstein/gas": "github:grundstein/gas#http2",
+    "@magic/format": "0.0.59"
   },
   "dependencies": {
+    "@artificialmuseum/db": "git+ssh://git@git.system.community:artificialmuseum/db",
     "@grundstein/commons": "github:grundstein/commons#http2"
   },
   "contributors": [
